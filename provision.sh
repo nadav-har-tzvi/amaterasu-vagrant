@@ -10,6 +10,10 @@ rpm -Uvh http://repos.mesosphere.com/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noa
 yum -y install mesos marathon
 echo "IP=192.168.33.10" >> /etc/default/mesos
 
+#setting the --no-switch_user flag for mesos slave
+sudo chmod 777 -R /etc/mesos-slave/
+touch /etc/mesos-slave/?no-switch_user
+
 echo "installing zookeeper"
 echo "--------------------"
 
