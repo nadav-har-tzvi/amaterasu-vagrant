@@ -9,11 +9,15 @@ echo "----------------------------"
 rpm -Uvh http://repos.mesosphere.com/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm
 yum -y install mesos marathon
 echo "IP=192.168.33.11" >> /etc/default/mesos
-echo "192.168.33.10" >> /etc/mesos/ip
-#echo "192.168.33.10" >> /etc/mesos-master/hostname
+echo "192.168.33.11" >> /etc/mesos/ip
+echo "192.168.33.11" >> /etc/mesos-master/hostname
 #echo "192.168.33.10" >> /etc/mesos-slave/ip
 #echo "192.168.33.10" >> /etc/mesos-slave/hostname
 
+echo "export LIBPROCESS_IP=192.168.33.11" >> ~/.bashrc
+echo "export SPARK_LOCAL_IP=192.168.33.11" >> ~/.bashrc
+
+sourc ~/.bashrc
 #setting the --no-switch_user flag for mesos slave
 sudo chmod 777 -R /etc/mesos-slave/
 touch /etc/mesos-slave/?no-switch_user
