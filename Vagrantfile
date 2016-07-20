@@ -5,6 +5,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.33.11"
   config.vm.hostname = "node1"
   config.vm.synced_folder "~/Work/Shinto/io/amaterasu/target/scala-2.10", "/ama"
+  config.vm.synced_folder "~/Shinto/mesos-dependencies", "/mesos-dependencies"
            
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "4098"
