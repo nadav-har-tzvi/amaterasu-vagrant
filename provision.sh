@@ -2,6 +2,7 @@
 
 echo "Setting up the hosts file"
 echo "192.168.33.11 node1" >> /etc/hosts
+echo "192.168.33.12 node2" >> /etc/hosts
 
 echo "installin mesos and marathon"
 echo "----------------------------"
@@ -14,8 +15,8 @@ echo "192.168.33.11" >> /etc/mesos-master/hostname
 #echo "192.168.33.10" >> /etc/mesos-slave/ip
 #echo "192.168.33.10" >> /etc/mesos-slave/hostname
 
-echo "export LIBPROCESS_IP=192.168.33.11" >> ~/.bashrc
-echo "export SPARK_LOCAL_IP=192.168.33.11" >> ~/.bashrc
+sudo echo "export LIBPROCESS_IP=192.168.33.11" >> /home/vagrant/.bashrc
+sudo echo "export SPARK_LOCAL_IP=192.168.33.11" >> /home/vagrant/.bashrc
 
 sourc ~/.bashrc
 #setting the --no-switch_user flag for mesos slave
