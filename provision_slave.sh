@@ -3,6 +3,7 @@
 echo "Setting up the hosts file"
 echo "192.168.33.11 node1" >> /etc/hosts
 echo "192.168.33.12 node2" >> /etc/hosts
+echo "192.168.33.13 node3" >> /etc/hosts
 
 echo "installin mesos and marathon"
 echo "----------------------------"
@@ -11,10 +12,9 @@ rpm -Uvh http://repos.mesosphere.com/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noa
 yum -y install mesos
 
 sudo rm -f /etc/mesos/zk 
+sudo rm -f /etc/mesos-slave/ip
+sudo rm -f /etc/mesos-slave/hostname
 echo "zk://192.168.33.11:2181/mesos" >> /etc/mesos/zk
-#echo "IP=192.168.33.11" >> /etc/default/mesos
-#echo "192.168.33.11" >> /etc/mesos/ip
-#echo "192.168.33.11" >> /etc/mesos-master/hostname
 echo "192.168.33.12" >> /etc/mesos-slave/ip
 echo "192.168.33.12" >> /etc/mesos-slave/hostname
 
