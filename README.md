@@ -1,3 +1,4 @@
+
 #Amaterasu Dev Machine Vagrant Setup
 
 This repository contains the vagrentfile and provisioning script for creating an Amaterasu dev machine.
