@@ -1,5 +1,5 @@
 
-#Amaterasu Dev Machine Vagrant Setup
+# Amaterasu Dev Machine Vagrant Setup
 
 This repository contains the vagrentfile and provisioning script for creating an Amaterasu dev machine.
 
@@ -17,7 +17,7 @@ git clone https://github.com/shintoio/amaterasu.git
 config.vm.synced_folder "~/Shinto/amaterasu/target/scala-2.11", "/ama"
 ```
 
-##Installation
+## Installation
 
 Clone this repository to your local machine:
 
